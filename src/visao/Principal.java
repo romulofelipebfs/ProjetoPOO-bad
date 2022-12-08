@@ -23,13 +23,16 @@ public class Principal {
 		IngressoDAO iDAO = new IngressoDAO();
 		ArrayList<Cliente> cliente = new ArrayList<Cliente>();
 		cliente = cDAO.emitirRelatorio();
-		/*
+		
+		
 		for(i=0; i<cliente.size(); i++) {
-			System.out.println("\t"+cliente.get(i).getId()+"\t"+cliente.get(i).getNome()+"\t"+cliente.get(i).getCpf()+"\t"+cliente.get(i).getTelefone());
+			System.out.println("\t"+cliente.get(i).getCpf()+"\t"+cliente.get(i).getNome()+"\t" + cliente.get(i).getTelefone() + "\t" + cliente.get(i).getSenha());
 		}
-		/*
+		
+		
 		 
-		 */
+		 /*
+		
 		System.out.println("Menu Principal");	
 		System.out.println("--------------------------");
 		System.out.println("1  Login");	
@@ -115,7 +118,7 @@ public class Principal {
 				
 		}while(op!=4);
 		
-		
+		*/
 	}
 
 }

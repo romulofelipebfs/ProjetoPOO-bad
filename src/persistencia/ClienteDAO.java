@@ -25,7 +25,7 @@ public class ClienteDAO {
 			Statement instrucao = c.getConexao().createStatement(); // "new" do Statement - cria uma instru��o
 			ResultSet rs = instrucao.executeQuery(REL);
 			while(rs.next()) { //andando no resultset
-				pessoa = new Cliente(rs.getInt("cpf"), rs.getString("nome"), rs.getInt("telefone"));
+				pessoa = new Cliente(rs.getLong("cpf"), rs.getString("nome"), rs.getInt("telefone"), rs.getString("senha"));
 				lista.add(pessoa);
 			}
 			c.desconectar(); //se desconecta com o bd
@@ -40,7 +40,7 @@ public class ClienteDAO {
 		try {
 			c.conectar();
 			PreparedStatement instrucao = c.getConexao().prepareStatement(INC);
-			instrucao.setInt(1, pessoa.getCpf());
+			instrucao.setLong(1, pessoa.getCpf());
 			instrucao.setString(2, pessoa.getNome());
 			instrucao.setInt(3, pessoa.getTelefone());
 			instrucao.execute();

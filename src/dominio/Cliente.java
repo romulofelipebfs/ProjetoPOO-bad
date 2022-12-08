@@ -1,21 +1,37 @@
 package dominio;
 
 public class Cliente {
-	private int cpf;
+	private long cpf;
 	private String nome;
 	private int telefone;
+	private String senha;
 	
 	public Cliente() {
 		
 	}
 	
-	public Cliente(int cpf, String nome, int telefone) {
+	
+	public Cliente(long l, String nome, int telefone, String senha) {
 		super();
-		this.cpf = cpf;
+		this.cpf = l;
 		this.nome = nome;
 		this.telefone = telefone;
+		this.senha = senha;
+		
 	}
-	public int getCpf() {
+	
+	
+	public String getSenha() {
+		return senha;
+	}
+
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+
+	public long getCpf() {
 		return cpf;
 	}
 	public void setCpf(int cpf) {
